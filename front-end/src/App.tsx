@@ -2,6 +2,7 @@ import './index.css'
 import SwitchLanguageButton from './components/ui/SwitchLanguageButton';
 import PageButton from './components/ui/PageButton';
 import { pages } from './constants/pages';
+import { ProgressRing } from './components/ProgressRing';
 
 const partOfTheDay = 'Afternoon';
 const userName = 'Joao';
@@ -23,21 +24,23 @@ function App() {
           </div>
 
           {/* Core Habits Counting */}
-          <div className='size-22 rounded-full'></div>
+          <ProgressRing />
         </header>
 
         {/* Language Selector */}
         <div className='w-full flex gap-2 items-center justify-end '>
-          <SwitchLanguageButton language='EN' isSelected />
-          <SwitchLanguageButton language='PT' />
+          <SwitchLanguageButton language='EN'/>
+          <SwitchLanguageButton language='PT'/>
         </div>
 
         {/* Motivational Phrase */}
-        <div className='w-[95%] text-sm text-muted'>Discipline is freedom — choose the discomfort that builds, not the one that destroys.</div>
+        <div className='w-full items-center px-4'>
+          <p className='text-sm text-muted'>Discipline is freedom — choose the discomfort that builds, not the one that destroys.</p>
+        </div>
 
         {/* Pages selection */}
-        <nav className='w-full flex gap-2'>
-        {pages.map((page) => <PageButton name={page.name} itemsDone={page.itemsDone} totalItems={page.totalItems} /> )}
+        <nav className='w-full flex items-center gap-4'>
+          {pages.map((page) => <PageButton key={page.name} name={page.name} itemsDone={page.itemsDone} totalItems={page.totalItems}/> )}
         </nav>
 
         {/* Page Content */}
