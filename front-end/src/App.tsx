@@ -37,6 +37,15 @@ function App() {
         <nav>
 
         </nav>
+
+        {/* Page Content */}
+        <div></div>
+        
+        {/* Reminder */}
+        <footer className='w-full h-fit flex bg-surface border border-px border-line rounded-xl px-4 py-4 items-center'>
+          <p className='text-sm text-muted text-justify'><span className='text-ink font-semibold'>Remember</span>: This Is A Menu, Not An Exam. Close The Core Items And Let The Rest Build Over Time. One Priority Per Cycle Beats Chasing Everything At Once.
+          </p>
+        </footer>
       </div>
     </>
   )
