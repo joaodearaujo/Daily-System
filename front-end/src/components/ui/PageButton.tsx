@@ -2,7 +2,7 @@ import { cn } from "../../utils/cn"
 import type { PageButtonProps } from "../../types/page.type";
 
 
-const PageButton = ({name, totalItems, itemsDone, isSelected, ...props}: PageButtonProps) => {
+export function PageButton({name, totalItems, itemsDone, isSelected, ...props}: PageButtonProps) {
   return (
     <button 
     {...props}
@@ -14,6 +14,4 @@ const PageButton = ({name, totalItems, itemsDone, isSelected, ...props}: PageBut
       <span className={cn('text-xs ', isSelected ? 'text-ink font-bold' : 'text-muted font-semibold' )}> {itemsDone ?? 0 } / {totalItems ?? 0}</span>
     </button>
   )
-}
-
-export default PageButton;
+};

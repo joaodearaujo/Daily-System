@@ -1,11 +1,11 @@
 import { cn } from "../../utils/cn"
 
-export interface SwitchLanguageButtonProps extends React.ComponentPropsWithRef<'button'> {
+interface SwitchLanguageButtonProps extends React.ComponentPropsWithRef<'button'> {
     language: string;
     isSelected?: boolean;
 }
 
-const SwitchLanguageButton = ({language, isSelected, ...props}: SwitchLanguageButtonProps) => {
+export function SwitchLanguageButton({language, isSelected, ...props}: SwitchLanguageButtonProps) {
   return (
     <button 
     {...props}
@@ -18,5 +18,4 @@ const SwitchLanguageButton = ({language, isSelected, ...props}: SwitchLanguageBu
   )
 }
 
-export default SwitchLanguageButton
 
