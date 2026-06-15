@@ -20,6 +20,10 @@ public class TaskGroup {
     @OneToMany(mappedBy = "group")
     private List<Task> taskList;
 
+    @ManyToOne
+    @JoinColumn(name = "page_id)", nullable = false)
+    Page page;
+
     public TaskGroup() { }
 
     public TaskGroup(String name, String description) {
