@@ -5,5 +5,4 @@ public enum TaskTags {
     STUDY,
     CARE,
     MIND
-
 }
