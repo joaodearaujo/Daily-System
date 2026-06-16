@@ -32,7 +32,7 @@ public class TaskGroupService {
         return convertToResponse(newTaskGroup);
     }
 
-    public List<TaskGroupResponse> listAll() {
+    public List<TaskGroupResponse> findAll() {
         List<TaskGroup> taskGroups = taskGroupRepository.findAll();
         return taskGroups.stream().
                 map(this::convertToResponse)

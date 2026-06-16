@@ -24,6 +24,6 @@ public class PageController {
 
     @GetMapping
     private List<PageResponse> listAll() {
-        return pageService.listAll();
+        return pageService.findAll();
     }
 }

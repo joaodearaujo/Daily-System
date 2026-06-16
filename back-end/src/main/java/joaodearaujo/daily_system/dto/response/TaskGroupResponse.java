@@ -6,5 +6,5 @@ public record TaskGroupResponse(
         String id,
         String name,
         String description,
-        List<TaskResponse> taskResponseList
+        List<TaskResponse> tasks
 ) {}

@@ -27,7 +27,7 @@ public class PageService {
         return convertToResponse(newPage);
     }
 
-    public List<PageResponse> listAll() {
+    public List<PageResponse> findAll() {
         List<Page> pageResponseList = pageRepository.findAll();
         return pageResponseList.stream()
                 .map(this::convertToResponse)
