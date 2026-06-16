@@ -1,7 +1,7 @@
     package joaodearaujo.daily_system.domain.entity;
 
     import jakarta.persistence.*;
-    import joaodearaujo.daily_system.domain.enums.TaskTags;
+    import joaodearaujo.daily_system.domain.enums.TaskCategory;
 
     import java.util.UUID;
 
@@ -13,7 +13,7 @@
 
         @Column
         @Enumerated(EnumType.STRING)
-        private TaskTags tag;
+        private TaskCategory tag;
 
         @Column
         private String name;
@@ -30,7 +30,7 @@
 
         public Task() {}
 
-        public Task(TaskTags tag, String name, String description, Boolean isCore, TaskGroup group ) {
+        public Task(TaskCategory tag, String name, String description, Boolean isCore, TaskGroup group) {
             this.group = group;
             this.id = UUID.randomUUID().toString();
             this.name = name;
@@ -42,40 +42,16 @@
         public String getId() {
             return id;
         }
-
-        public TaskTags getTag() {
+        public TaskCategory getTag() {
             return tag;
         }
-
         public String getName() {
             return name;
         }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
         public String getDescription() {
             return description;
         }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
         public Boolean getCore() {
             return isCore;
-        }
-
-        public void setCore(Boolean core) {
-            isCore = core;
-        }
-
-        public TaskGroup getGroup() {
-            return group;
-        }
-
-        public void setTaskGroup(TaskGroup group) {
-            this.group = group;
         }
     }

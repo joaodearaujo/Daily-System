@@ -4,7 +4,7 @@ import java.util.List;
 
 public record TaskGroupResponse(
         String id,
-        String name,
+        String title,
         String description,
         List<TaskResponse> tasks
 ) {}

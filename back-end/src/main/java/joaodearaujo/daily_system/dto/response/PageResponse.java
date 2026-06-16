@@ -4,6 +4,6 @@ import java.util.List;
 
 public record PageResponse(
         String id,
-        String name,
+        String title,
         List<TaskGroupResponse> groups
 ) {}

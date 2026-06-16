@@ -41,7 +41,7 @@ public class TaskGroupService {
 
     public TaskGroup convertToEntity(TaskGroupRequest taskGroupRequest, Page page) {
         return new TaskGroup(
-                taskGroupRequest.name(),
+                taskGroupRequest.title(),
                 taskGroupRequest.description(),
                 page
         );

@@ -1,11 +1,11 @@
 package joaodearaujo.daily_system.dto.request;
 
-import joaodearaujo.daily_system.domain.enums.TaskTags;
+import joaodearaujo.daily_system.domain.enums.TaskCategory;
 
 public record TaskRequest(
     String groupId,
-    TaskTags tag,
-    String name,
+    TaskCategory category,
+    String title,
     String description,
-    Boolean isCore
+    Boolean isMandatory
 ) {}

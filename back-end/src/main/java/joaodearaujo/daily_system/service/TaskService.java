@@ -53,10 +53,10 @@ public class TaskService {
 
     public Task convertToEntity(TaskRequest taskRequest, TaskGroup group) {
         return new Task(
-                taskRequest.tag(),
-                taskRequest.name(),
+                taskRequest.category(),
+                taskRequest.title(),
                 taskRequest.description(),
-                taskRequest.isCore(),
+                taskRequest.isMandatory(),
                 group
         );
     }

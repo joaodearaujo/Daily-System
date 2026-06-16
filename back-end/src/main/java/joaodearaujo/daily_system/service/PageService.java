@@ -36,7 +36,7 @@ public class PageService {
 
     Page convertToEntity(PageRequest pageRequest) {
         return new Page(
-                pageRequest.name()
+                pageRequest.title()
         );
     }
 

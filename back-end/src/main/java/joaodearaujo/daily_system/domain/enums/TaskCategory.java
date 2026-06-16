@@ -1,6 +1,6 @@
 package joaodearaujo.daily_system.domain.enums;
 
-public enum TaskTags {
+public enum TaskCategory {
     BODY,
     STUDY,
     CARE,
