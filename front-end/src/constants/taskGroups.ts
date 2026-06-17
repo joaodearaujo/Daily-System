@@ -1,4 +1,4 @@
-import type { TaskBlockProps } from "../types/taskBlock.type";
+import type { TaskBlockProps } from "../features/routine/types/taskBlock.type";
 
 export const taskBlocksList: TaskBlockProps[] = [
     {

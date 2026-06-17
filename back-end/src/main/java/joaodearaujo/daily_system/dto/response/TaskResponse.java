@@ -1,10 +1,10 @@
 package joaodearaujo.daily_system.dto.response;
-import joaodearaujo.daily_system.domain.enums.TaskTags;
+import joaodearaujo.daily_system.domain.enums.TaskCategory;
 
 public record TaskResponse(
         String id,
-        TaskTags tag,
-        String name,
+        TaskCategory category,
+        String title,
         String description,
-        Boolean isCore
+        Boolean is_mandatory
 ) {}

@@ -48,10 +48,10 @@ export function ProgressRing({
       </svg>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-lg font-bold leading-none text-white">
+        <span className="text-xl font-bold leading-none text-ink font-secondary">
           {current}/{total}
         </span>
-        <span className="mt-0.5 text-xs text-neutral-400">{label}</span>
+        <span className="mt-0.5 text-xs text-muted font-secondary">{label}</span>
       </div>
     </div>
   );

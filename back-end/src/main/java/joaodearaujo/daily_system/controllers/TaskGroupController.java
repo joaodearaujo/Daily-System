@@ -24,6 +24,6 @@ public class TaskGroupController {
 
     @GetMapping
     private List<TaskGroupResponse> listAll() {
-        return taskGroupService.listAll();
+        return taskGroupService.findAll();
     }
 }

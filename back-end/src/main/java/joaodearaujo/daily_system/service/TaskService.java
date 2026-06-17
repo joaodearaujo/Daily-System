@@ -22,7 +22,7 @@ public class TaskService {
 
     public TaskResponse createTask(TaskRequest taskRequest) {
 
-        TaskGroup group = taskGroupRepository.findById(taskRequest.groupId())
+        TaskGroup group = taskGroupRepository.findById(taskRequest.group_id())
                 .orElseThrow(() -> new RuntimeException("Group not found"));
 
         Task newTask = convertToEntity(taskRequest, group);
@@ -30,19 +30,33 @@ public class TaskService {
         return convertToResponse(newTask);
     }
 
-    public List<TaskResponse> listAll() {
+    public List<TaskResponse> findAll() {
         List<Task> tasks = taskRepository.findAll();
         return tasks.stream().
                 map(this::convertToResponse)
                 .toList();
     }
 
+    public List<TaskResponse> findByGroup(String groupId) {
+        TaskGroup group = taskGroupRepository.findById(groupId)
+                .orElseThrow(() -> new RuntimeException("Group not found: " + groupId));
+
+         List<TaskResponse> taskListByGroup = taskRepository.findByGroup(group).stream()
+                 .map(this::convertToResponse)
+                 .toList();
+         return taskListByGroup;
+    }
+
+    public void deleteTask(String id) {
+            taskRepository.deleteById(id);
+    }
+
     public Task convertToEntity(TaskRequest taskRequest, TaskGroup group) {
         return new Task(
-                taskRequest.tag(),
-                taskRequest.name(),
+                taskRequest.category(),
+                taskRequest.title(),
                 taskRequest.description(),
-                taskRequest.isCore(),
+                taskRequest.is_mandatory(),
                 group
         );
     }

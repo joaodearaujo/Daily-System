@@ -2,9 +2,8 @@ package joaodearaujo.daily_system.dto.response;
 
 import java.util.List;
 
-public record TaskGroupResponse(
+public record RoutineResponse(
         String id,
         String title,
-        String description,
-        List<TaskResponse> tasks
+        List<TaskGroupResponse> groups
 ) {}

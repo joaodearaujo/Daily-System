@@ -1,5 +1,5 @@
 package joaodearaujo.daily_system.dto.request;
 
-public record PageRequest(
-   String name
+public record RoutineRequest(
+   String title
 ) {}
