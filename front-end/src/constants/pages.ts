@@ -1,6 +1,16 @@
-import type { PageButtonProps } from "../types/page.type";
+import type { SetPageButtonProps } from "../components/SetPageButton"
 
-export const pages: PageButtonProps[] = [
-    {name: 'daily', itemsDone: 0, totalItems: 24},
-    {name: 'weekly', itemsDone: 0, totalItems: 12},
+export const pages: SetPageButtonProps[] = [
+    {
+        title: 'daily'
+    },
+    {
+        title: 'weekly'
+    },
+    {
+        title: 'Training'
+    },
+    {
+        title: 'Gear'
+    },
 ]
