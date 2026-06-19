@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 interface EditModeContextType {
     isEditMode: boolean;
-    toggleEditMode: () => void;
+    toggleEditMode: (e: React.MouseEvent) => void;
 }
 
 const EditModeContext = createContext<EditModeContextType>({
@@ -12,7 +12,7 @@ const EditModeContext = createContext<EditModeContextType>({
 
 export function EditModeProvider({ children } : {children: React.ReactNode}) {
     const [isEditMode, setIsEditMode] = useState(false);
-    const toggleEditMode = () => setIsEditMode(prev => !prev );
+    const toggleEditMode = (e: React.MouseEvent) =>  {e.stopPropagation(); setIsEditMode(prev => !prev )};
 
     return (
         <EditModeContext.Provider value={{ isEditMode, toggleEditMode}}>
