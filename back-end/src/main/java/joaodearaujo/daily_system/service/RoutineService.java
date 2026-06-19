@@ -35,7 +35,8 @@ public class RoutineService {
 
     Routine convertToEntity(RoutineRequest routineRequest) {
         return new Routine(
-                routineRequest.title()
+                routineRequest.title(),
+                routineRequest.description()
         );
     }
 
@@ -47,6 +48,7 @@ public class RoutineService {
         return new RoutineResponse(
                 page.getId(),
                 page.getName(),
+                page.getDescription(),
                 taskGroupResponseList
         );
     }
