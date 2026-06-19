@@ -1,4 +1,3 @@
-
 export function ProgressRing({
   current = 1,
   total = 6,
@@ -6,7 +5,6 @@ export function ProgressRing({
   size = 82,
   strokeWidth = 8,
 }) {
-
   const radius = (size - strokeWidth) / 2;       
   const circumference = 2 * Math.PI * radius;   
   const progress = current / total;              
@@ -22,9 +20,10 @@ export function ProgressRing({
         width={size}
         height={size}
         viewBox={`0 0 ${size} ${size}`}
-        className="-rotate-90"                  
+        // 1. overflow-visible adicionado para o brilho não ser cortado nas bordas
+        className="-rotate-90 overflow-visible"                  
       >
-
+        {/* Círculo de Fundo */}
         <circle
           cx={center}
           cy={center}
@@ -34,6 +33,7 @@ export function ProgressRing({
           className="stroke-neutral-700"
         />
 
+        {/* Círculo de Progresso */}
         <circle
           cx={center}
           cy={center}
@@ -43,7 +43,7 @@ export function ProgressRing({
           strokeLinecap="round"                   
           strokeDasharray={circumference}        
           strokeDashoffset={offset}              
-          className="stroke-green-400 transition-all duration-500"
+          className="stroke-green-400 transition-all duration-500 drop-shadow-[0_0_8px_rgba(74,222,128,0.6)]"
         />
       </svg>
 
@@ -56,4 +56,3 @@ export function ProgressRing({
     </div>
   );
 }
-

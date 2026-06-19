@@ -13,9 +13,13 @@
    --color-amber: #E2A64C;
    --color-blue: #5BA2E9;
    --color-ok: #35C28D;
+   --color-edit:#9E96EF;
 
    --font-primary: 'Inter', sans-serif;
    --font-secondary: 'Space Grotesk', sans-serif;
+
+   --shadow-aura: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+   --shadow-aura-strong:0 0 25px 0 rgba(0, 0, 0, 0.15)
   
   }
 #root {

@@ -15,22 +15,29 @@ public class Routine {
     @Id
     String id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     String name;
+
+    @Column(nullable = true)
+    String description;
 
     @OneToMany(mappedBy = "page")
     List<TaskGroup> groupList;
 
     public Routine() {}
 
-    public Routine(String name) {
+    public Routine(String name, String description) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
+        this.description = description;
         this.groupList = new ArrayList<>();
     }
 
     public String getName() {
         return name;
+    }
+    public String getDescription() {
+        return description;
     }
 
     public void setName(String name) {

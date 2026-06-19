@@ -15,7 +15,7 @@
         @Enumerated(EnumType.STRING)
         private TaskCategory tag;
 
-        @Column
+        @Column(nullable = false)
         private String name;
 
         @Column
