@@ -18,7 +18,8 @@ export const TaskGroupApiSchema = z.object({
 export const RoutineApiSchema = z.array(
   z.object({
     id: z.string(),
-    name: z.string(),
+    title: z.string(),
+    description: z.string(),
     groups: z.array(TaskGroupApiSchema),
   })
 );
