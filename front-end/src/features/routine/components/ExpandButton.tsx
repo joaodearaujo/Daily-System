@@ -3,7 +3,7 @@ import { cn } from "../../../utils/cn";
 
 interface ExpandButtonProps extends React.ComponentPropsWithoutRef<'button'>{
     isExpanded: boolean;
-    className: string;
+    className?: string;
 }
 
 export function ExpandButton({
@@ -14,12 +14,14 @@ export function ExpandButton({
     return (
         <button 
             {...props}
+            aria-label="Exapand content"
+            title="Exapand contet"
             className="cursor-pointer size-fit flex border-none items-center justify-center"
         >
             <ChevronDown 
                 strokeWidth={3}
                 className={cn(
-                        "size-3.5 text-muted transition-transform duration-200 ease-in-out",
+                        "size-3.5 text-muted transition-transform duration-400 ease-in-out",
                         isExpanded ? 'rotate-180' : 'rotate-0',
                         className
                     )}
