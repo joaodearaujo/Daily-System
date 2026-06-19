@@ -16,7 +16,7 @@ export function EditItemButton ({ className, ...props }: Props) {
             aria-label="Edit Item"
             title="Edit Item"
             className={cn(
-                "size-6 border bg-blue-500/10 border-blue-500 rounded-lg flex items-center justify-center group hover:bg-blue-500/20 hover:shadow-aura-strong shadow-blue-500 transition-all duration-300 ease-in-out ",
+                "size-6 border-2 bg-blue-500/10 border-blue-500 rounded-lg flex items-center justify-center group hover:bg-blue-500/20 hover:shadow-aura shadow-blue-500 transition-all duration-300 ease-in-out ",
                 isEditMode ? "opacity-100 translate-x-0": "opacity-0 -translate-x-2",
                 className
             )}
