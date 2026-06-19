@@ -4,10 +4,10 @@ import { type LucideIcon } from "lucide-react"
 interface Props extends React.ComponentPropsWithoutRef<'button'>{
     classNameButton?: string;    
     classNameIcon?: string;    
-    Icon: LucideIcon;
+    Icon?: LucideIcon;
 }
 
-export function EditModeButton({ Icon, classNameButton, classNameIcon, ...props } : Props) {
+export function StandardButton({ Icon, classNameButton, classNameIcon, ...props } : Props) {
     return (
             <button 
                 {...props}
@@ -18,13 +18,13 @@ export function EditModeButton({ Icon, classNameButton, classNameIcon, ...props 
                     classNameButton
                 )}
             >
-              <Icon 
+            { Icon &&<Icon 
                     strokeWidth={2.5}
                     className={cn(
                         "text-muted size-5 transition-colors duration-300",
                         classNameIcon
                     )}
-                />
+                />}
             </button>
     )
 }

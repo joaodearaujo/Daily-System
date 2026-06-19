@@ -21,7 +21,7 @@ export function ExpandButton({
             <ChevronDown 
                 strokeWidth={3}
                 className={cn(
-                        "size-3.5 text-muted transition-transform duration-400 ease-in-out",
+                        "size-3.5 text-muted transition-transform duration-300 ease-in-out",
                         isExpanded ? 'rotate-180' : 'rotate-0',
                         className
                     )}
