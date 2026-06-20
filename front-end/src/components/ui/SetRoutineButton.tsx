@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
-import { cn } from "../utils/cn"
-import type { Task } from "../features/routine/types/routine.domain.type";
-import { useEditMode } from "../context/EditModeContext";
-import { useCheckToDelete } from "../features/routine/hooks/useCheckToDelete";
+import { cn } from "../../utils/cn"
+import type { Task } from "../../features/routine/types/routine.domain.type";
+import { useEditMode } from "../../context/EditModeContext";
+import { useCheckToDelete } from "../../features/routine/hooks/useCheckToDelete";
 import { X } from "lucide-react";
-import { CheckButton } from "../features/routine/components/CheckButton";
+import { CheckButton } from "./CheckButton";
 
 export interface Props {
     title: string;
@@ -22,8 +22,8 @@ export function SetRoutineButton({title, tasks, isActive}: Props) {
   return (
       <Link to={`/${title}`}
           className={cn(
-              'flex w-full h-12.5 min-w-0  border-2 rounded-lg py-2 px-2.75 items-center cursor-pointer ',
-              isActive ? 'border-line2 bg-surface2' : 'border-line bg-surface',
+              'flex w-full h-12.5 min-w-0  border rounded-lg py-2 px-2.75 items-center cursor-pointer ',
+              isActive ? 'border-line2/50 bg-surface2' : 'border-line bg-surface',
               isEditMode ? 'justify-between' : 'justify-center'
             )}
         >
@@ -46,7 +46,7 @@ export function SetRoutineButton({title, tasks, isActive}: Props) {
           {isEditMode && 
               <CheckButton 
                 Icon={X} 
-                onClick={handleCheckToDelete} 
+                onClick={handleCheckToDelete}
                 isChecked={isCheckedToDelete} 
                 className={isCheckedToDelete ? 'bg-red border-red': ''} 
             />}
