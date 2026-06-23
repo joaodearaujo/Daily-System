@@ -1,7 +1,7 @@
 package joaodearaujo.daily_system.dto.request;
 
 public record TaskGroupRequest(
-   String pageId,
+   String routineId,
    String title,
    String description
 ) {}
