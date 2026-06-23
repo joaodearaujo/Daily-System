@@ -11,7 +11,9 @@ import { useCreateRoutine } from "@/features/routine/hooks/useCreateRoutine";
 export function RoutineNav() {
   const { isEditMode } = useEditMode();
   const location = useLocation();
+  
   const { routines } = useRoutines();
+
   const { isFormOpen, setIsFormOpen, handleForm } = useForm();
   
   const { mutate: addRoutine } = useCreateRoutine();
@@ -30,7 +32,7 @@ export function RoutineNav() {
   return (
     <>
       {isEditMode && <AddButton title="Routine" onClick={handleForm} />}
-      <div className="w-full flex gap-2">
+      <div className="w-full flex gap-2 items-center">
         {routines.map(routine => (
           <SetRoutineButton
             key={routine.id}
@@ -39,16 +41,17 @@ export function RoutineNav() {
             isActive={location.pathname === `/${routine?.title}`}
           />
         ))}
-        {isFormOpen && (
-          <Form
-            title="Create Routine"
-            fields={ROUTINE_FIELDS}
-            method="POST"
-            onSubmit={handleSubmit}
-            onClose={() => setIsFormOpen(false)}
-          />
-        )}
       </div>
+
+      {isFormOpen && (
+        <Form
+          title="Create Routine"
+          fields={ROUTINE_FIELDS}
+          method="POST"
+          onSubmit={handleSubmit}
+          onClose={() => setIsFormOpen(false)}
+        />
+      )}
     </>
   );
 }

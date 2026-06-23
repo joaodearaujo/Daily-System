@@ -26,4 +26,9 @@ public class RoutineController {
     private List<RoutineResponse> listAll() {
         return routineService.findAll();
     }
+
+    @DeleteMapping("/{id}")
+    private void deleteTask(@PathVariable String id) {
+        routineService.deleteRoutine(id);
+    }
 }

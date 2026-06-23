@@ -6,7 +6,7 @@ interface Props extends React.ComponentPropsWithoutRef<'button'>{
     classNameIcon?: string;
     classNameWrapper?: string;   
     label: string;
-    Icon?: LucideIcon;
+    Icon: LucideIcon;
 }
 
 export function StandardButton({ 
@@ -18,10 +18,11 @@ export function StandardButton({
   ...props 
 }: Props) {
   return (
-    <div className={cn(
-      "group bg-surface2 pb-1 rounded-[13px] transition-colors duration-300 ease-in-out",
-      classNameWrapper
-    )}>
+    <div className={cn( 
+            "group bg-surface2 pb-1 rounded-[13px] transition-colors duration-300 ease-in-out",
+            classNameWrapper
+         )}
+    >
       <button
         {...props}
         aria-label={label}
@@ -31,15 +32,13 @@ export function StandardButton({
           classNameButton
         )}
       >
-        {Icon && (
-          <Icon
-            strokeWidth={2.5}
-            className={cn(
-              "size-5 text-muted transition-all duration-300",
-              classNameIcon
-            )}
-          />
-        )}
+        <Icon
+          strokeWidth={2.5}
+          className={cn(
+            "size-5 text-muted transition-all duration-300",
+            classNameIcon
+          )}
+        />
       </button>
     </div>
   );

@@ -14,17 +14,13 @@ export function CheckButton({ isChecked, Icon, className, ...props }: CheckButto
             title="Check Button"
             {...props}
             className={cn(
-                "size-6 border-2 rounded-lg flex items-center justify-center cursor-pointer transition-all ease-in-out duration-300 hover:shadow-aura shadow-muted/20", 
-                isChecked ? 'bg-ok border-ok' : 'bg-none  border-line',
-                className
-                
+                "size-6 border-2 rounded-lg flex items-center justify-center cursor-pointer  transition-all ease-in-out duration-300 ", 
+                isChecked ? 'bg-ok border-ok' : 'bg-transparent  border-line hover:bg-surface2',
+                className  
             )}
         >
             <Icon strokeWidth={4} 
-                   className={cn(
-                        "size-3", 
-                        isChecked ? ('text-surface') : ('hidden')
-                   )}
+                   className={cn("size-3", isChecked ? 'text-surface' : 'hidden')}
                 />
         </button>
     )

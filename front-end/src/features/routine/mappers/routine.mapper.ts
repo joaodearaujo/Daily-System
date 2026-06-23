@@ -7,10 +7,12 @@ export const mapRoutineToDomain = (data: RoutineApiResponse): Routine[] => {
     title: routine.title,
     description: routine.description,         
     groups: routine.groups.map((group) => ({
+      routineId: routine.id, 
       id: group.id,
       title: group.title,
       description: group.description,
       tasks: group.tasks.map((task) => ({
+        groupId: group.id,  
         id: task.id,
         category: task.category as Task['category'],
         title: task.title,

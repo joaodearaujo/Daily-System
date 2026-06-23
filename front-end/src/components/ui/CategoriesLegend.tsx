@@ -6,18 +6,16 @@ export function CategoriesLegend() {
             <div className='rounded-xl bg-surface2 pb-1 w-full'>   
               <div className="text-muted text-xs uppercase flex gap-4 justify-around bg-surface rounded-xl font-secondary p-2 border border-line">
                 <span>Categories:</span>
-                  {Object
-                    .entries(CATEGORY_COLORS)
-                    .map(([key, color]) => (
+
+                  {Object.entries(CATEGORY_COLORS).map(([key, color]) => (
                       <div 
                         className='flex gap-2 items-center' 
                         key={key}
                       >
-                        <Dot color={color}/>
+                        <Dot color={color}/> 
                         {key}
                       </div>
-                    ))}
-                              
+                   ))}            
               </div>
             </div>
     )

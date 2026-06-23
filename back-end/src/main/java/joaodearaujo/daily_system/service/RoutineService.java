@@ -1,5 +1,6 @@
 package joaodearaujo.daily_system.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import joaodearaujo.daily_system.domain.entity.Routine;
 import joaodearaujo.daily_system.dto.request.RoutineRequest;
 import joaodearaujo.daily_system.dto.response.RoutineResponse;
@@ -32,6 +33,16 @@ public class RoutineService {
                 .map(this::convertToResponse)
                 .toList();
     }
+
+    public void deleteRoutine(String routineId) {
+        if (!routineRepository.existsById(routineId)) {
+            throw new EntityNotFoundException("Routine not found with id:" + routineId);
+        }
+
+        routineRepository.deleteById(routineId);
+    }
+
+
 
     Routine convertToEntity(RoutineRequest routineRequest) {
         return new Routine(

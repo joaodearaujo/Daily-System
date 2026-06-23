@@ -9,8 +9,8 @@ import { Star } from "@/components/ui/Star";
 import { Dot } from "@/components/ui/Dot";
 import { useExpand } from "@/features/routine/hooks/useExpand";
 import { CloseButton } from "@/components/ui/CloseButton";
-import { useDelete } from "../hooks/useDelete";
 import { useState } from "react";
+import { useDeleteTask } from "../hooks/useDeleteTask";
 
 interface Props {
     task: TaskType;
@@ -21,7 +21,8 @@ export function Task({ task }: Props) {
     const [isChecked, setIsChecked] = useState<boolean>(task.isComplete);
     const { isEditMode } = useEditMode();
     const { isExpanded, controlExpand, handleExpand } = useExpand(false);
-    const { mutate: deleteItem } = useDelete();
+    const { mutate: deleteTask } = useDeleteTask();
+
     const controlCheck = (e: React.MouseEvent) => {
         e.stopPropagation();
         setIsChecked((prev) => !prev);
@@ -54,8 +55,8 @@ export function Task({ task }: Props) {
 
                     {isEditMode ? (
                         <CloseButton
-                            onClick={() => deleteItem(task.id)}
-                            className={"text-ink/60 hover:text-red"}
+                            onClick={() => deleteTask(task.id)}
+                            className={"opacity-60 hover:text-red"}
                         />
                     ) : (
                         <>

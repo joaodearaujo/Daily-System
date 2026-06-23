@@ -1,10 +1,16 @@
+interface Props {
+  current: number;
+  total: number
+}
+
 export function ProgressRing({
   current = 1,
   total = 6,
-  label = "Core",
-  size = 82,
-  strokeWidth = 8,
-}) {
+}: Props) {
+  
+  const label = "Core"
+  const size = 82
+  const strokeWidth = 8
   const radius = (size - strokeWidth) / 2;       
   const circumference = 2 * Math.PI * radius;   
   const progress = current / total;              
@@ -22,7 +28,7 @@ export function ProgressRing({
         viewBox={`0 0 ${size} ${size}`}
         className="-rotate-90 overflow-visible"                  
       >
-        {/* Círculo de Fundo */}
+        {/* Outer circle */}
         <circle
           cx={center}
           cy={center}
@@ -32,7 +38,7 @@ export function ProgressRing({
           className="stroke-surface2"
         />
 
-        {/* Círculo de Progresso */}
+        {/* Inner circle */}
         <circle
           cx={center}
           cy={center}

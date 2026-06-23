@@ -10,7 +10,7 @@ import { useCreateTask } from "../hooks/useCreateTask";
 import { TASK_FIELDS } from "@/constants/FormFields";
 import type { CategoryKey } from "@/constants/categoryColors";
 import { CloseButton } from "@/components/ui/CloseButton";
-import { useDelete } from "../hooks/useDelete";
+import { useDeleteGroup } from "../hooks/useDeleteGroup";
 
 interface Props {
     group: TaskGroup;
@@ -21,7 +21,7 @@ export function TaskGroup({ group }: Props) {
     const { isEditMode } = useEditMode();
     const { isFormOpen, setIsFormOpen, handleForm } = useForm();
     const { mutate: createTask } = useCreateTask();
-    const { mutate: deleteItem } = useDelete();
+    const { mutate: deleteGroup } = useDeleteGroup();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -46,8 +46,8 @@ export function TaskGroup({ group }: Props) {
                     
                     {isEditMode && (
                        <CloseButton
-                            onClick={() => deleteItem(group.id)}
-                            className={"text-ink/60 hover:text-red"}
+                            onClick={() => deleteGroup(group.id)}
+                            className={"opacity-60 hover:text-red hover:opacity-100"}
                         />
                     )}
                     

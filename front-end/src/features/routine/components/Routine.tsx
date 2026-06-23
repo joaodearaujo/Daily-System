@@ -18,7 +18,9 @@ export function Routine({ routine }: Props) {
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     const data = new FormData(e.currentTarget);
+
     createGroup({
       routineId: routine.id as string,
       title: data.get('title') as string,

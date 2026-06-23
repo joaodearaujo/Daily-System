@@ -1,5 +1,6 @@
 package joaodearaujo.daily_system.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import joaodearaujo.daily_system.domain.entity.Routine;
 import joaodearaujo.daily_system.domain.entity.TaskGroup;
 import joaodearaujo.daily_system.dto.request.TaskGroupRequest;
@@ -37,6 +38,15 @@ public class TaskGroupService {
         return taskGroups.stream().
                 map(this::convertToResponse)
                 .toList();
+    }
+
+    public void deleteGroup(String groupId) {
+        if (!taskGroupRepository.existsById(groupId)) {
+            throw new EntityNotFoundException("Group not found with ID: " + groupId);
+        };
+
+        taskGroupRepository.deleteById(groupId);
+
     }
 
     public TaskGroup convertToEntity(TaskGroupRequest taskGroupRequest, Routine page) {

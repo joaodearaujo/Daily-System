@@ -57,11 +57,9 @@
 
 body {
   max-width: 560px;
+  height: 100%;
   margin: 0 auto;
   padding: 18px 14px 60px;
   background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   transition: background-color 400ms ease-in-out, color 300ms ease-in-out;
 }

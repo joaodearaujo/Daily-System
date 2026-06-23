@@ -2,16 +2,19 @@ import { cn } from "@/utils/cn";
 import { X } from "lucide-react";
 
 interface Props extends React.ComponentPropsWithoutRef<'button'> {
-    className: string; 
+    className?: string; 
 }
 
 export function CloseButton({className, ...props}: Props) {
     return (
         <button 
             {...props}
-            className={cn("size-5 items-center justify-center flex text-ink cursor-pointer hover:text-ink/60 transition-colors duration-300 ease-in-out",  className)}
+            className={cn("size-fit items-center justify-center flex text-ink cursor-pointer hover:text-ink/60 transition-colors duration-300 ease-in-out",  className)}
         >
-            <X />
+            <X 
+                strokeWidth={3}
+                className="size-5"
+            />
         </button>
     )
 }

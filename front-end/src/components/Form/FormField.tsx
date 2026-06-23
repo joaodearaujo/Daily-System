@@ -1,5 +1,3 @@
-import { cn } from "@/utils/cn";
-
 export interface FormField {
     label: string;
     id: string;
@@ -7,12 +5,12 @@ export interface FormField {
     placeholder: string;
     required: boolean;
     type: string;
-    options?: {optionName: string; optionValue: string}[]
+    options?: {optionName: string; optionValue: string | number}[]
 }
 
 export function FormField({...field}: FormField) {
     return (
-        <div className={cn("flex items-start gap-1 font-secondary", field.type === 'select' ? 'flex': 'flex-col')}>
+        <div className="flex flex-col items-start gap-1 font-secondary">
             <label
                 className="text-md text-ink font-medium capitalize"
                 htmlFor={field.id}
@@ -21,6 +19,7 @@ export function FormField({...field}: FormField) {
             </label>
             {field.type === 'select' ? (
                 <select 
+                    className="w-full bg-surface2 rounded-xl px-3 py-2 border border-line placeholder:text-sm focus:outline-none text-semibold text-muted"
                     name={field.name}
                     id={field.id}
                 >
@@ -39,7 +38,7 @@ export function FormField({...field}: FormField) {
                     placeholder={field.placeholder}
                     id={field.id}
                     name={field.name}
-                    required
+                    required={field.required}
                     className="w-full bg-surface2 rounded-xl px-3 py-2 border border-line placeholder:text-sm focus:outline-none text-semibold text-muted"
                     type={field.type}
                 />

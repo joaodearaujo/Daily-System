@@ -18,7 +18,7 @@ export function AddButton({
             aria-label="Add Item"
             title="Add Item"
             className={cn(
-                "w-full flex items-center justify-center border-edit/50 bg-none border rounded-lg p-2 cursor-pointer border group hover:border-edit transition-all duration-300 ease-in-out hover:shadow-edit/10",
+                "w-full flex items-center justify-center border-edit/50 bg-none border rounded-lg p-2 cursor-pointer group hover:border-edit transition-all duration-300 ease-in-out hover:shadow-edit/10",
                 classNameButton
             )}
         >

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/taskGroup")
+@RequestMapping("/v1/task-group")
 public class TaskGroupController {
 
     private final TaskGroupService taskGroupService;
@@ -25,5 +25,10 @@ public class TaskGroupController {
     @GetMapping
     private List<TaskGroupResponse> listAll() {
         return taskGroupService.findAll();
+    }
+
+    @DeleteMapping("/{id}")
+    private void deleteTask(@PathVariable String id) {
+        taskGroupService.deleteGroup(id);
     }
 }
