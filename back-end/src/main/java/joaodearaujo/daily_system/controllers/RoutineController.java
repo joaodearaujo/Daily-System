@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("v1/page")
+@RequestMapping("v1/routine")
 public class RoutineController {
 
     private final RoutineService routineService;
@@ -18,8 +18,8 @@ public class RoutineController {
     }
 
     @PostMapping
-    private RoutineResponse createPage(@RequestBody RoutineRequest routineRequest) {
-        return  routineService.createPage(routineRequest);
+    private RoutineResponse createRoutine(@RequestBody RoutineRequest routineRequest) {
+        return  routineService.createRoutine(routineRequest);
     }
 
     @GetMapping
