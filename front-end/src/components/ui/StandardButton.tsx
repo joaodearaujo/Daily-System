@@ -1,5 +1,5 @@
-import { cn } from "../../utils/cn";
 import { type LucideIcon } from "lucide-react"
+import { cn } from "@/utils/cn";
 
 interface Props extends React.ComponentPropsWithoutRef<'button'>{
     classNameButton?: string;    
@@ -27,7 +27,7 @@ export function StandardButton({
         aria-label={label}
         title={label}
         className={cn(
-          "flex items-center justify-center rounded-xl size-fit p-2 bg-surface border border-surface cursor-pointer transition-all duration-300 ease-in-out",
+          "flex items-center justify-center rounded-xl size-fit p-2 bg-surface border border-line cursor-pointer transition-all duration-300 ease-in-out",
           classNameButton
         )}
       >

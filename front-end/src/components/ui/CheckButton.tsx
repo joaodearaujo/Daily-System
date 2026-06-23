@@ -1,5 +1,5 @@
 import { type LucideIcon } from "lucide-react";
-import { cn } from "../../utils/cn";
+import { cn } from "@/utils/cn";
 
 interface CheckButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     isChecked?: boolean;
@@ -23,7 +23,7 @@ export function CheckButton({ isChecked, Icon, className, ...props }: CheckButto
             <Icon strokeWidth={4} 
                    className={cn(
                         "size-3", 
-                        isChecked ? 'text-surface' : 'hidden'
+                        isChecked ? ('text-surface') : ('hidden')
                    )}
                 />
         </button>
